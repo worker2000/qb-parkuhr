@@ -1,0 +1,90 @@
+* { box-sizing: border-box; }
+body {
+  display: none;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans";
+  background: transparent;
+  color: #e9eef5;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0; padding: 16px;
+}
+
+.card {
+  background: rgba(15,17,21,0.96);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  width: 360px;
+  max-width: 90vw;
+}
+
+h1, h2 { margin-top: 0; }
+button {
+  display: inline-block; margin: 8px 6px 0 0; padding: 10px 16px;
+  border: none; border-radius: 10px; background: #2d72ff; color: #fff;
+  font-weight: 600; cursor: pointer;
+}
+button:hover { filter: brightness(1.08); }
+button.secondary { background: #2a2f3a; color: #c9d2e3; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+
+textarea {
+  background: #0f141b; color: #e9eef5; border: 1px solid #2a2f3a;
+  border-radius: 8px; padding: 8px; resize: vertical;
+}
+
+/* Seitliches HUD */
+.sidecard {
+  position: fixed; top: 20px; right: 20px;
+  min-width: 320px; max-width: 420px;
+  padding: 14px 16px; border-radius: 12px;
+  background: rgba(23,26,33,0.92); box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  pointer-events: none;
+  transform: translateX(20px); opacity: 0;
+  transition: transform .18s ease-out, opacity .18s ease-out;
+}
+.sidecard.show { transform: translateX(0); opacity: 1; }
+.sidecard .line { display:flex; gap:8px; justify-content:space-between; margin:6px 0; font-size:14px; }
+.sidecard .k { color:#99a7bd; }
+.sidecard #s-plate { font-weight:700; }
+.sidecard .hint { margin-top:6px; font-size:12px; color:#8392a8; text-align:right; }
+body.panel-open #parkuhr-panel { display: block; }
+#parkuhr-panel { 
+  display:none; position: fixed; inset: 5% 8%; 
+  background: rgba(15,18,24,0.92); color:#fff; 
+  border-radius: 12px; overflow: hidden; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+.panel-banner{
+  padding: 16px 20px; font-size: 20px; font-weight: 700;
+  background: linear-gradient(90deg, #1f3b73, #2a6f9c);
+}
+.panel-body{ display:flex; height: calc(100% - 56px); }
+.panel-sidebar{
+  width: 220px; background: rgba(0,0,0,0.25); padding: 12px; display:flex; flex-direction: column; gap:8px;
+}
+.panel-sidebar .panel-item{
+  background: rgba(255,255,255,0.06); color:#fff; border:0; padding:10px 12px; border-radius:8px; text-align:left; cursor:pointer;
+}
+.panel-sidebar .panel-item.active{ background: rgba(255,255,255,0.14); }
+.panel-content{ flex:1; padding:16px; overflow:auto; }
+
+.dev-table{ width:100%; border-collapse: collapse; font-size:14px; }
+.dev-table th, .dev-table td{ padding:10px 12px; border-bottom:1px solid rgba(255,255,255,0.08); vertical-align: top; }
+.dev-table th{ text-align:left; color:#cfe3ff; font-weight:600; }
+#parkuhr-panel{display:none; position:fixed; inset:5% 8%; background:rgba(15,18,24,0.92); color:#fff; border-radius:12px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.5); z-index:99999; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+body.panel-open #parkuhr-panel{display:block;}
+.panel-banner{padding:16px 20px; font-size:20px; font-weight:700; background:linear-gradient(90deg,#1f3b73,#2a6f9c);}
+.panel-body{display:flex; height:calc(100% - 56px);}
+.panel-sidebar{width:220px; background:rgba(0,0,0,0.25); padding:12px; display:flex; flex-direction:column; gap:8px;}
+.panel-sidebar .panel-item{background:rgba(255,255,255,0.06); color:#fff; border:0; padding:10px 12px; border-radius:8px; text-align:left; cursor:pointer;}
+.panel-sidebar .panel-item.active{background:rgba(255,255,255,0.14);}
+.panel-content{flex:1; padding:16px; overflow:auto;}
+.dev-table{width:100%; border-collapse:collapse; font-size:14px;}
+.dev-table th,.dev-table td{padding:10px 12px; border-bottom:1px solid rgba(255,255,255,0.08); vertical-align:top;}
+.dev-table th{text-align:left; color:#cfe3ff; font-weight:600;}
+.badge{display:inline-block; padding:2px 8px; border-radius:999px; background:rgba(255,255,255,0.12); color:#fff; font-size:12px;}
+s

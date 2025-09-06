@@ -1,0 +1,1 @@
+-- Absichtlich leer – Logik in common.lua / meter.lua / automat.lua

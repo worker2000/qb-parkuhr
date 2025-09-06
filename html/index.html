@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Parkschein</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Parkschein-Menü -->
+  <div id="menu" class="card" style="display:none;">
+    <h1>Parkschein lösen</h1>
+    <div class="btns">
+      <button onclick="buy(10)">10 Minuten</button>
+      <button onclick="buy(30)">30 Minuten</button>
+      <button onclick="buy(60)">60 Minuten</button>
+    </div>
+    <!-- Extra: Langzeit nur bei Automaten -->
+    <div id="long-durations" class="btns" style="display:none;">
+      <button onclick="buy(360)">6 Stunden</button>
+      <button onclick="buy(1440)">24 Stunden</button>
+      <button onclick="buy(10080)">7 Tage</button>
+    </div>
+    <button class="secondary" onclick="closeMenu()">Abbrechen</button>
+  </div>
+
+  <!-- Verwarnung -->
+  <div id="warn-window" class="card" style="display:none;">
+    <h2>Verwarnung ausstellen</h2>
+    <p><strong>Nummernschild:</strong> <span id="warn-plate"></span></p>
+    <textarea id="warn-reason" placeholder="Grund der Verwarnung..." rows="4" style="width:100%;"></textarea>
+    <div class="btns">
+      <button onclick="submitWarning()">Absenden</button>
+      <button class="secondary" onclick="closeWarn()">Abbrechen</button>
+    </div>
+  </div>
+
+  <!-- Seitliches Info-HUD -->
+  <div id="side-info" class="sidecard" style="display:none;">
+    <div class="line"><span class="k">Nummernschild:</span><span id="s-plate">-</span></div>
+    <div class="line"><span class="k">Eigentümer:</span><span id="s-owner">-</span></div>
+    <div class="line"><span class="k">Gültig bis:</span><span id="s-expires">-</span></div>
+    <div class="hint">Schließt automatisch</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
